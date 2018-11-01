@@ -13,6 +13,7 @@ int main() {
     struct dirent* entry;
     entry = readdir(d);
     int size = 0;
+    printf("STATISTICS FOR DIRECTORY ./\n");
     while (entry) {
         struct stat* b = malloc(sizeof(struct stat));
         if (entry->d_type == DT_DIR)
