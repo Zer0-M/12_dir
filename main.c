@@ -16,7 +16,7 @@ void our_ls(DIR * d){
         struct stat* b = malloc(sizeof(struct stat));
         if (entry->d_type == DT_DIR)
             printf("directory: %s\n", entry->d_name);
-            if(!(strcmp(entry->d_name,"./"))||!(strcmp(entry->d_name,"../"))){
+            if(!(strcmp(entry->d_name,"."))&&!(strcmp(entry->d_name,".."))){
                 DIR * sub;
                 sub=opendir(entry->d_name);
                 our_ls(sub);
