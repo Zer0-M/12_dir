@@ -14,7 +14,7 @@ int main() {
     entry = readdir(d);
     int size = 0;
     while (entry) {
-        struct stat* b = malloc(sizeof(b));
+        struct stat* b = malloc(sizeof(struct stat));
         if (entry->d_type == DT_DIR)
             printf("directory: %s\n", entry->d_name);
         if (entry->d_type == DT_REG) {
