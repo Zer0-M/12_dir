@@ -40,7 +40,7 @@ int our_ls(DIR * d){
             return size;
         }
     } else {
-        printf("error: %s", strerror(errno));
+        printf("error: %s\n", strerror(errno));
     }
 
     return 0; 
@@ -54,7 +54,9 @@ int main(int argc, char* argv[]) {
         closedir(d);
     } else {
         printf("please specify directory:\n");
-        
+        char * s;
+        scanf("%s",&s);
+        our_ls(s);
     }
     return 0;
 }
