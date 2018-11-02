@@ -47,7 +47,7 @@ int our_ls(DIR * d){
 }
 // main function
 int main(int argc, char* argv[]) {
-    if (argc >1 ) {
+    if (argc > 1 ) {
         DIR* d;
         d = opendir(argv[1]);
         our_ls(d);
@@ -55,8 +55,11 @@ int main(int argc, char* argv[]) {
     } else {
         printf("please specify directory:\n");
         char * s;
-        scanf("%s",&s);
-        our_ls(s);
+        scanf("%s",s);
+        DIR* nd;
+        nd = opendir(s);
+        our_ls(nd);
+        closedir(nd);
     }
     return 0;
 }
