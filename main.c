@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         closedir(d);
     } else {
         printf("please specify directory:\n");
-        char * s;
+        char s[20];
         scanf("%s",s);
         DIR* nd;
         nd = opendir(s);
